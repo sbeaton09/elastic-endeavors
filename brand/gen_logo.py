@@ -31,11 +31,11 @@ if __name__=="__main__":
     mark(256).save("favicon.ico",sizes=[(16,16),(32,32),(48,48),(64,64)])
     mark(180,False).convert("RGB").save("apple-touch-icon.png")
     mark(192).save("brand/icon-192.png"); mark(512).save("brand/icon-512.png")
-    og=Image.new("RGB",(1200,630),BG); m=mark(280); og.paste(m,(120,175),m)
-    fp="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"
-    try: f=ImageFont.truetype(fp,64); f2=ImageFont.truetype(fp.replace("-Bold",""),30)
+    og=Image.new("RGB",(1200,630),BG); m=mark(280); og.paste(m,(100,175),m)
+    fp="/home/mano/.fonts/Montserrat-Bold.ttf"
+    try: f=ImageFont.truetype(fp,56); f2=ImageFont.truetype("/home/mano/.fonts/Montserrat-SemiBold.ttf",34)
     except Exception: f=f2=ImageFont.load_default()
-    d=ImageDraw.Draw(og); d.text((450,240),"ELASTIC ENDEAVORS",font=f,fill=(240,242,245))
-    d.text((452,330),"Deep tech x consumer.",font=f2,fill=(150,155,165))
+    d=ImageDraw.Draw(og); d.text((440,252),"ELASTIC ENDEAVORS",font=f,fill=(240,242,245))
+    d.text((442,336),"Deep tech x consumer.",font=f2,fill=(150,155,165))
     og.save("brand/og.png")
     mark(16).resize((128,128),Image.NEAREST).save("/tmp/logo/check16.png")
